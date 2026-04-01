@@ -1,0 +1,20 @@
+Using CPU. Note: This module is much faster with a GPU.
+Traceback (most recent call last):
+  File "/Users/81070/workspace/hwp-auto-generator-onClaude/test_ocr.py", line 116, in <module>
+    test_ocr(pdf_path)
+    ~~~~~~~~^^^^^^^^^^
+  File "/Users/81070/workspace/hwp-auto-generator-onClaude/test_ocr.py", line 54, in test_ocr
+    ocr_blocks_raw = ocr.extract_from_page(page)
+  File "/Users/81070/workspace/hwp-auto-generator-onClaude/exam_parser/parser/ocr_extractor.py", line 76, in extract_from_page
+    img_array = np.frombuffer(pix.tobytes(), dtype=np.uint8).reshape(
+        pix.height, pix.width, pix.n - pix.alpha
+    )
+ValueError: cannot reshape array of size 1339594 into shape (1734,1230,3)
+🧪 Testing OCR on: sample/sample.pdf
+
+📊 Total pages: 3
+
+🤖 Initializing EasyOCR for ['ko', 'en']...
+🤖 Extracting text via OCR (page 0)...
+
+❌ Error: cannot reshape array of size 1339594 into shape (1734,1230,3)
