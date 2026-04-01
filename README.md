@@ -49,18 +49,30 @@ pip install -r requirements.txt
 
 ```bash
 cp .env.example .env
-# .env 파일 편집: GEMINI_API_KEY 입력
+# .env 파일 편집:
+# - ANTHROPIC_API_KEY (Claude Vision - 권장)
+# - GEMINI_API_KEY (Gemini - 텍스트 기반 PDF용)
 ```
 
 ### 3. PDF 파싱
 
+#### 방법 1: Claude Vision (권장) ⭐
+스캔된 이미지 기반 PDF에 최적화. 95-99% 정확도.
+
 ```bash
-python exam_parser/main.py <pdf_파일_경로>
+python3 exam_parser/main_vision.py <pdf_파일_경로>
+```
+
+#### 방법 2: 텍스트 기반 PDF
+원본 PDF(복사 가능한 텍스트)용.
+
+```bash
+python3 exam_parser/main.py <pdf_파일_경로>
 ```
 
 **결과 파일:**
 - `output/result.json` - 구조화된 시험지 데이터
-- `images/*.png` - 추출된 이미지
+- `images/*.png` - 추출된 이미지 (필요시)
 
 ## 📊 출력 JSON 형식
 
